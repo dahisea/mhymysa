@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "md5": "^2.3.0",
-    "node-fetch": "^3.1.0"
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/superagent": "^4.1.13"
   }
 }
