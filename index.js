@@ -3,4 +3,4 @@ import genshin from './genshin.js'
 
 genshin.sign(cookie)
 
-console.log(process.env)
+console.log(`cookie长度: ${process.env.SIGN_TARGET_COOKIE_1}`)
