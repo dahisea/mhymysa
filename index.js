@@ -7,6 +7,10 @@ const cookieKeys = Reflect
 ;(async () => {
     for (let key of cookieKeys) {
         console.log(`============================= 开始为${key}签到 =======================================`)
-        await genshin.sign(process.env[key])
+        try {
+            await genshin.sign(process.env[key])
+        } catch (error) {
+            console.error(`${key}签到失败，已跳过`)
+        }
     }
 })()
