@@ -1,6 +1,12 @@
-import cookie from './cookie.js'
 import genshin from './genshin.js'
 
-genshin.sign(cookie)
+const cookieKeys = Reflect
+    .ownKeys(process.env)
+    .filter(key => key.startsWith('SIGN_TARGET_COOKIE_'))
 
-console.log(`cookie长度: ${process.env.SIGN_TARGET_COOKIE_1.length}`)
+;(async () => {
+    for (let key of cookieKeys) {
+        console.log(`============================= 开始为${key}签到 =======================================`)
+        await genshin.sign(process.env[key])
+    }
+})()
