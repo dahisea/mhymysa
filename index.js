@@ -10,7 +10,7 @@ const cookieKeys = Reflect
         try {
             await genshin.sign(process.env[key])
         } catch (error) {
-            console.error(`${key}签到失败，已跳过`)
+            console.error(`${key}签到失败，以下是错误信息：\n`, error)
         }
     }
 })()
