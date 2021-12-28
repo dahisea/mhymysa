@@ -27,4 +27,5 @@ jobs:
       - name: Run sign
         env:
           SIGN_TARGET_COOKIE_1: ${{ secrets.YUU_COOKIE }}
+          SIGN_TARGET_COOKIE_ATT: ${{ secrets.ATT_COOKIE }}
         run: npm start
