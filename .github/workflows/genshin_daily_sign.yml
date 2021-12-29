@@ -37,4 +37,4 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
-          echo "event_path: ${{ github.event_path }}"
+          echo "event action: ${{ github.event.action }}"
