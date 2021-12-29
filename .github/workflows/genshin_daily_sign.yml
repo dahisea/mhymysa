@@ -37,6 +37,7 @@ jobs:
           echo "Hello ${{ github.event.inputs.name }}!"
       
       - name: Debug repository_dispatch trigger
+        if: ${{ github.event_name == 'repository_dispatch' }}
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "event_name: ${{ github.event_name }}"
