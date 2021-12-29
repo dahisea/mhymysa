@@ -8,9 +8,7 @@ on:
         required: true
         default: ''
   repository_dispatch:
-    types:
-      - daily_sign
-  schedule: # 计划任务触发
+  schedule:
     - cron: "0 0 * * *" # cron表达式，Actions时区是UTC+8时间，所以要往前推8个小时
 
 jobs:
@@ -33,8 +31,10 @@ jobs:
           SIGN_TARGET_COOKIE_YUU: ${{ secrets.YUU_COOKIE }}
         run: npm start
       
-      - name: Say hello
+      - name: Debug repository_dispatch trigger
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "event action: ${{ github.event.action }}"
+          echo "'foo' field: ${{ github.event.client_payload.foo }}"
+          echo "payload: ${{ toJson(github.event.client_payload) }}"
