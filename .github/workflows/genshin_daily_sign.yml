@@ -30,11 +30,16 @@ jobs:
         env:
           SIGN_TARGET_COOKIE_YUU: ${{ secrets.YUU_COOKIE }}
         run: npm start
-      
-      - name: Debug repository_dispatch trigger
+
+      - name: Debug workflow_dispatch inputs
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
+      
+      - name: Debug repository_dispatch trigger
+        run: |
+          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "event_name: ${{ github.event_name }}"
           echo "event action: ${{ github.event.action }}"
           echo "'foo' field: ${{ github.event.client_payload.foo }}"
           echo "payload: ${{ toJson(github.event.client_payload) }}"
