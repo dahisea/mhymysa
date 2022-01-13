@@ -1,4 +1,4 @@
-import genshin from './genshin.js'
+import genshin from './genshin_sign.js'
 
 const cookieKeys = Reflect
     .ownKeys(process.env)

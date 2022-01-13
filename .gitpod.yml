@@ -1,0 +1,5 @@
+
+vscode:
+  extensions:
+    - gruntfuggly.todo-tree
+    - esbenp.prettier-vscode
