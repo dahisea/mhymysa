@@ -1,9 +1,9 @@
-name: 米游社原神每日签到
+name: 米游社原神每日任务
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" # cron表达式，Actions时区是UTC+8时间，所以要往前推8个小时
+    - cron: "0 1 * * *" # cron表达式，Actions时区是UTC+8时间，所以要往前推8个小时
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '16.3.0'
       
-      - name: Do sign
+      - name: Do daily task
         env:
-          SIGN_TARGET_COOKIE_YUU: ${{ secrets.YUU_COOKIE }}
-        run: npm run daily-sign
+          DAILY_TASK_COOKIE_YUU: ${{ secrets.DAILY_TASK_YUU_COOKIE }}
+        run: npm run daily-task

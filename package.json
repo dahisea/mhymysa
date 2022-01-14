@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "daily-sign": "node daily-sign.js",
+    "daily-task": "node daily-task.js"
   },
   "author": "",
   "license": "ISC",
