@@ -1,4 +1,4 @@
-name: 米游社原神每日签到
+name: 米游原
 
 on:
   workflow_dispatch:
