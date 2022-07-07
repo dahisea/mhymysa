@@ -1,4 +1,4 @@
-name: 米游社原神每日任务
+name: 米游原每
 
 on:
   workflow_dispatch:
